@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  @apply bg-black text-white;
+  overscroll-behavior-y: none;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    @apply px-4;
+  }
+}
+
+/* Touch-friendly buttons */
+button, 
+a {
+  @apply cursor-pointer min-h-[44px] min-w-[44px];
+}
+
+/* Mobile menu backdrop */
+.mobile-menu-backdrop {
+  @apply fixed inset-0 bg-black/50 backdrop-blur-sm z-40;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-zinc-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-purple-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-purple-700;
+}
+
+/* Loading states */
+.loading-skeleton {
+  @apply animate-pulse bg-zinc-800 rounded;
+}
+
+/* Form elements */
+input,
+select,
+textarea {
+  @apply appearance-none;
+}
+
+/* Safe area insets for modern mobile browsers */
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
